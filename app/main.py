@@ -9,8 +9,8 @@ from .routers import post, user, auth, vote
 from .config import settings
 from fastapi.middleware.cors import CORSMiddleware
 
-# Currently commented because we are creating table using alembic autogenerate
-# models.Base.metadata.create_all(bind=engine)  # Create All DB Models
+# Comment this line if you want to build using alembic auto generate
+models.Base.metadata.create_all(bind=engine)  # Create All DB Models
 
 app = FastAPI()
 
@@ -33,7 +33,7 @@ app.include_router(vote.router)
 @app.get("/")
 def root():
 
-    return {"message": "Hello World"}
+    return {"message": "Hello World .................."}
 
 # Getting Connection object to database using psycopg2 Database driver for postgres
 # while True:
